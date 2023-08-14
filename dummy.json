@@ -1,0 +1,26 @@
+[
+    {
+        "title": "abc",
+        "hashtag": ["#alphabet", "#first"],
+        "author": "American",
+        "slide": 15,
+        "fileSize": "2997kb",
+        "src" : "./public/abc.pptx"
+    },
+    {
+        "title": "def",
+        "hashtag": ["#alphabet", "#second"],
+        "author": "Korean",
+        "slide": 35,
+        "fileSize": "6997kb",
+        "src" : "./public/def.pptx"
+    },
+    {
+        "title": "qwer",
+        "hashtag": ["#alphabet", "#third"],
+        "author": "Japaness",
+        "slide": 21,
+        "fileSize": "3997kb",
+        "src" : "./public/qwer.pptx"
+    }
+]
