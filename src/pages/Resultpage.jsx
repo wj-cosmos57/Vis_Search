@@ -16,8 +16,8 @@ function Resultpage() {
         }
 
         const objectURL = URL.createObjectURL(file);
-        // const viewerURL = `https://view.officeapps.live.com/op/embed.aspx?src=${objectURL}`; 이 코드가 ppt 띄우는 코드라고 추정되는데 작동X
-        setUrl(objectURL);
+        const viewerURL = `https://view.officeapps.live.com/op/embed.aspx?src=${objectURL}`; 
+        setUrl(viewerURL);
     }
 
     return (

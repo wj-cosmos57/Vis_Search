@@ -22,8 +22,15 @@ function Search() {
         goResult();
     }
     const deleteList = () => {
-
+        
     }
+
+    const activeEnter = (e) => {
+        if(e.key === 'Enter') {
+            addList();
+        }
+    }
+
     return (
         <>
             <div>
@@ -35,6 +42,7 @@ function Search() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value) }
+                    onKeyDown={(e) => activeEnter(e)}
                 ></input>
                 <button 
                     onClick={addList}
