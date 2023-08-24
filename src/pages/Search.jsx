@@ -9,9 +9,9 @@ function Search() {
     const [ name, setName ] = useState('');
     const movePage = useNavigate();
 
-    const goResult = () => {
+    const goResult = (pdf) => {
         movePage("/searchResult", { state: {
-            pdfName: `${name}`
+            pdfName: `${pdf}`
         } });
     };
 
@@ -41,7 +41,7 @@ function Search() {
         localStorage.setItem("searchHistory", JSON.stringify(updatedList))
 
         setName('');
-        goResult();
+        goResult(name);
     }
 
     const deleteList = (index) => {
@@ -87,7 +87,7 @@ function Search() {
                     {
                         list.map( (item, index) => (
                             <li key={index}>
-                                {item}
+                                <span onClick={ () => {goResult(item)}} style={{cursor: 'pointer', textDecoration: 'underline'}}>{item}</span>
                                 <button onClick={() => {deleteList(index)}}>Delete</button>
                             </li>
                         ))
