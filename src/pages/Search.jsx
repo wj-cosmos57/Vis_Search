@@ -34,7 +34,10 @@ function Search() {
     }, []);
 
     const addList = () => {
-        const updatedList = [...list, name];
+        const currentDate = new Date();
+        const dateString = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+        
+        const updatedList = [...list, { query: name, date: dateString}];
         setList(updatedList);
 
         //로컬 스토리지에서 검색 기록을 저장
@@ -63,31 +66,32 @@ function Search() {
 
     return (
         <div className="search-app">
-            <div className="">
-                <img src="/public/Vis_logo.png" alt="no image" width="200"></img>
+            <div className="center-fixed-container">
+                <div className="logo-container">
+                    <img src="/public/Vis_logo.png" alt="no image" width="200"></img>
+                </div>
+                <div className="input-container">
+                    <input
+                        className="inputName"
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value) }
+                        onKeyDown={(e) => activeEnter(e)}
+                    ></input>
+                    <button onClick={addList}>Search</button>
+                </div>
+                <div className="navigation-link">
+                    <Link to="/">Home으로 돌아가기</Link>
+                </div>
             </div>
-            <div>
-                <input
-                    className="inputName"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value) }
-                    onKeyDown={(e) => activeEnter(e)}
-                ></input>
-                <button 
-                    onClick={addList}
-                >Search</button>
-            </div>
-            <div>
-                <Link to="/">Home으로 돌아가기</Link>
-            </div>
-            <div>
+            <div className="history-container">
                 <h3>- 검색 기록 -</h3>
                 <ul>
                     {
                         list.map( (item, index) => (
                             <li key={index}>
-                                <span onClick={ () => {goResult(item)}} style={{cursor: 'pointer', textDecoration: 'underline'}}>{item}</span>
+                                <span onClick={ () => {goResult(item.query)}} className="query-item">{item.query}</span>
+                                <span className="date-item">{item.date}</span>
                                 <button onClick={() => {deleteList(index)}}>Delete</button>
                             </li>
                         ))
