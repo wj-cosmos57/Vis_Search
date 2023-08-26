@@ -16,8 +16,8 @@ function Resultpage() {
         }
 
         const objectURL = URL.createObjectURL(file);
-        const viewerURL = `https://view.officeapps.live.com/op/embed.aspx?src=${objectURL}`; 
-        setUrl(viewerURL);
+        // const viewerURL = `https://view.officeapps.live.com/op/embed.aspx?src=${objectURL}`; 
+        setUrl(objectURL);
     }
 
     return (

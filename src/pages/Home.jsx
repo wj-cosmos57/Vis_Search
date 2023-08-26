@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import './Home.css';
 
 const Home = () => {
     return (
-      <div>
+      <div className="home-container">
         <h1>홈</h1>
         <p>가장 먼저 보여지는 페이지입니다.</p>
         <ul>
@@ -18,7 +19,7 @@ const Home = () => {
           <li>
             <Link to="/search">Search</Link>
           </li>
-      </ul>
+        </ul>
       </div>
     );
   };
