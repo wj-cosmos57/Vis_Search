@@ -8,7 +8,7 @@ const Home = () => {
         <p>가장 먼저 보여지는 페이지입니다.</p>
         <ul>
           <li>
-            <Link to="/urlparameter">urlParameter 방식</Link>
+            <Link to="/profiles">urlParameter 방식</Link>
           </li>
           <li>
             <Link to="/querystring">queryString 방식</Link>

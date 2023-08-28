@@ -16,8 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/urlparameter" element={<Parameter />}/>
-        <Route path="/profiles/:username" element={<Profile />} />
+        <Route path="/profiles" element={<Parameter />}>
+          <Route path=":username" element={<Profile />} />
+        </Route>
         <Route path="/querystring" element={<Query />} />
 
         <Route path="/result" element={<Resultpage />} />

@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 
 const data = {
-  velopert: {
-    name: '김민준',
+  wooju: {
+    name: '이우주',
     description: '리액트를 좋아하는 개발자',
   },
   gildong: {
